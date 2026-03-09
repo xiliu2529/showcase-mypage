@@ -76,7 +76,7 @@ const About = () => {
         initial={{ opacity: 0, y: 40, scale: 0.85 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.1 }} // 这里改成 once: false
+        viewport={{ once: false, amount: 0.2 }} // 这里改成 once: false
       >
         <Card
           raised
@@ -147,7 +147,7 @@ const About = () => {
         initial={{ opacity: 0, y: 40, scale: 0.85 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.1 }} // 这里改成 once: false
+        viewport={{ once: false, amount: 0.2 }} // 这里改成 once: false
       >
         <Box
           justifyContent="center"
@@ -219,7 +219,7 @@ const About = () => {
           scale: 1,
         }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <Box
           justifyContent="center"
@@ -247,7 +247,7 @@ const About = () => {
           scale: 1,
         }}
         transition={{ duration: 0.6 }}
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
         <Box
           id="section-communist"

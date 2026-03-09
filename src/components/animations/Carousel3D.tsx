@@ -25,6 +25,18 @@ const Carousel3D: React.FC<{
     const items = imagesRef.current;
     if (!carousel || items.length === 0) return;
 
+    let isVisible = false;
+
+    // 监听是否在屏幕内
+    const viewObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisible = entry.isIntersecting;
+      },
+      { threshold: 0.1 },
+    );
+
+    viewObserver.observe(carousel);
+
     const observer = Observer.create({
       target: carousel,
       type: "pointer,touch",
@@ -38,10 +50,12 @@ const Carousel3D: React.FC<{
       },
       onChange: (self) => {
         gsap.killTweensOf(progress);
+
         const delta =
           self.event.type === "wheel"
             ? self.deltaY * -0.0005
             : self.deltaX * 0.05;
+
         gsap.to(progress, {
           duration: 2,
           ease: "power4.out",
@@ -51,14 +65,17 @@ const Carousel3D: React.FC<{
     });
 
     const animate = () => {
+      if (!isVisible) return; // ⭐ 不在屏幕就不计算
+
       progress.value += rotationSpeed.current;
+
       items.forEach((image, index) => {
         const theta = index / items.length - progress.value;
+
         const x = -Math.sin(theta * Math.PI * 2) * radius;
         const y = Math.cos(theta * Math.PI * 2) * radius;
-        image.style.transform = `translate3d(${x}px, 0px, ${y}px) rotateY(${
-          360 * -theta
-        }deg)`;
+
+        image.style.transform = `translate3d(${x}px,0,${y}px) rotateY(${360 * -theta}deg)`;
       });
     };
 
@@ -66,6 +83,7 @@ const Carousel3D: React.FC<{
 
     return () => {
       observer.kill();
+      viewObserver.disconnect(); // ⭐ 清理
       gsap.ticker.remove(animate);
     };
   }, []);
@@ -102,6 +120,7 @@ const Carousel3D: React.FC<{
       <Box
         ref={carouselRef}
         sx={{
+          willChange: "transform",
           mt: "300px",
           width: "100%",
           height: "50vh",
