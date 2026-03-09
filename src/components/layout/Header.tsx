@@ -41,14 +41,6 @@ const Header = () => {
     fontSize: "3rem",
   };
 
-  const linkCommonSx = {
-    padding: "0.5rem",
-    color: theme.palette.text.primary,
-    "&:hover": {
-      color: theme.palette.primary.main,
-    },
-  };
-
   return (
     <AppBar position="fixed" elevation={3} sx={appBarSx}>
       <Toolbar sx={toolbarSx}>
