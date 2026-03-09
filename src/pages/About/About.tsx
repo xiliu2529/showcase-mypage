@@ -312,6 +312,62 @@ const About = () => {
           </Box>
         </Box>
       </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40, scale: 0.85 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false, amount: 0.2 }}
+      >
+        <Box
+          id="section-communist"
+          m={10}
+          justifyContent="center"
+          sx={{ mt: 30, scrollMarginTop: "150px" }}
+        >
+          <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+            偶然在B站刷到一个电吉他视频・
+            <Typography
+              component="span"
+              sx={{
+                fontSize: "40px",
+                color: "primary.main",
+                cursor: "pointer",
+                "&:hover": {
+                  transform: "scale(1.5)",
+                  color: "primary.main",
+                  cursor: "pointer",
+                },
+              }}
+              onClick={() =>
+                window.open(
+                  "https://www.bilibili.com/video/BV1CdeRzAEKm/?spm_id_from=333.337.search-card.all.click",
+                  "_blank",
+                )
+              }
+            >
+              《钢铁洪流进行曲》
+            </Typography>
+            电吉他版 ，当时就觉得非常带感。
+            起初没太在意，后来发现自己被吸引了又去历史记录找来看，甚至想学会电吉他弹这个曲子。
+          </Typography>
+          <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+            经过一周的考虑买了一把电吉他，开始了我的电吉他之路。
+            <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+              {" "}
+            </Typography>
+            本来想纯自学，但学了一个月发现自己没动力，进步很慢，不知道自己错在哪里。
+            过年的时候报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步很大。
+          </Typography>
+          <Typography variant="h3" sx={{ lineHeight: 1.8, mb: 2 }}>
+            无数次幻想自己也可以那么耀眼，虽然现在还差的远，但是能看见那个以后的自己。
+          </Typography>
+        </Box>
+      </motion.div>
     </Box>
   );
 };
