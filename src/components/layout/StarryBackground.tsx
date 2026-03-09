@@ -3,6 +3,7 @@ import type { Engine } from "tsparticles-engine";
 import { loadLinksPreset } from "tsparticles-preset-links";
 import { useAppContext } from "../../context/useAppContext"; // 假设你这样拿darkMode
 
+//背景组件，使用tsparticles实现星空背景，并根据darkMode切换颜色
 export default function StarryBackground() {
   const { darkMode } = useAppContext();
 

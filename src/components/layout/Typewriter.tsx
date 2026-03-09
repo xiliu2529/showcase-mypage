@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import type { OverridableStringUnion } from "@mui/types";
 
+//打字机组件
 interface TypewriterProps {
   sx?: SxProps<Theme>;
   text: string;
@@ -43,7 +44,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
 }) => {
   const [displayedText, setDisplayedText] = useState<string>("");
   const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">(
-    "typing"
+    "typing",
   );
   const timeoutRef = useRef<number | undefined>(undefined);
 

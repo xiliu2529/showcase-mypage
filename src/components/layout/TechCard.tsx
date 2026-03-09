@@ -1,13 +1,8 @@
 import React, { useState } from "react";
-import {
-  Card,
-  Typography,
-  Box,
-  LinearProgress,
-  Avatar,
-} from "@mui/material";
+import { Card, Typography, Box, LinearProgress, Avatar } from "@mui/material";
 import { useAppContext } from "../../context/useAppContext";
 
+// 技术卡片组件，显示技术图标、名称、熟练度，并在悬浮时显示描述
 type TechCardProps = {
   icon: string; // 图标 URL
   name: string; // 技术名
@@ -16,7 +11,13 @@ type TechCardProps = {
   hoverDesc?: string; // 悬浮时显示的描述
 };
 
-const TechCard: React.FC<TechCardProps> = ({ icon, name, level, desc, hoverDesc }) => {
+const TechCard: React.FC<TechCardProps> = ({
+  icon,
+  name,
+  level,
+  desc,
+  hoverDesc,
+}) => {
   const darkMode = useAppContext();
   const [hovered, setHovered] = useState(false);
 
@@ -90,9 +91,7 @@ const TechCard: React.FC<TechCardProps> = ({ icon, name, level, desc, hoverDesc 
             zIndex: 2,
           }}
         >
-          <Typography variant="body1">
-            {hoverDesc ?? "暂无更多信息"}
-          </Typography>
+          <Typography variant="body1">{hoverDesc ?? "暂无更多信息"}</Typography>
         </Box>
       )}
     </Card>
