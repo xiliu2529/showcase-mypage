@@ -19,7 +19,7 @@ const Header = () => {
 
   const buttonSx = {
     fontSize: "1.5rem",
-    color: ballOn ? "FF7043" : "#8CF7D4",
+    color: ballOn ? "#FF7043" : "#8CF7D4",
     transition: "color 0.3s ease",
   };
 
@@ -57,9 +57,8 @@ const Header = () => {
           </Typography>
         </Box>
         <Box>
-          {" "}
           <Button onClick={() => setBallOn(!ballOn)} sx={buttonSx}>
-            跟随
+            拖尾
           </Button>
           <Button onClick={toggleDarkMode} sx={{ fontSize: "1.5rem" }}>
             {darkMode ? "明" : "暗"}

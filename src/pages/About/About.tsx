@@ -24,7 +24,7 @@ const About = () => {
     "Xiliubat",
     "离不开 AI 的程序员",
     "正在学习的半成品全栈开发新手",
-    "正在努力成为吉他手的人",
+    "手指总掉队的电吉他新手",
   ];
   const [useYoutube, setUseYoutube] = useState(true);
   const testYoutube = () => {
@@ -83,7 +83,7 @@ const About = () => {
           style={{
             width: "830px",
             zIndex: 100,
-            margin: "30px auto  250px auto",
+            margin: "30px auto  300px auto",
             padding: 16,
             overflow: "visible",
           }}
