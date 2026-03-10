@@ -302,7 +302,11 @@ const About = () => {
               每个人的自由发展都成为一切人的自由发展的条件。
             </Box>
           </Typography>
+
           <Box sx={{ mt: 4, textAlign: "center" }}>
+            <Typography variant="h5" sx={{ display: "block", mt: 1 }}>
+              推荐观看: 【中文字幕】资本 or 共产？做出你的选择
+            </Typography>
             {useYoutube ? (
               <iframe
                 src="https://www.youtube.com/embed/LtsbQiPY2dA?si=dj0PnM4sxxgzG6T0"
@@ -331,10 +335,6 @@ const About = () => {
                 }}
               ></iframe>
             )}
-
-            <Typography variant="h5" sx={{ display: "block", mt: 1 }}>
-              推荐观看: 【中文字幕】资本 or 共产？做出你的选择
-            </Typography>
           </Box>
         </Box>
       </motion.div>
@@ -369,7 +369,9 @@ const About = () => {
               mb: 2,
             }}
           >
-            <SplitTextScatter text="偶然在B站刷到一个电吉他视频・" />
+            <SplitTextScatter text="偶然在" />
+            <SplitTextScatter style={{ WebkitTextStroke: "0px " }} text="B" />
+            <SplitTextScatter text="站刷到一个电吉他视频・" />
 
             <Typography
               component="span"
@@ -393,7 +395,12 @@ const About = () => {
             <SplitTextScatter text="经过一周的考虑买了一把电吉他，开始了我的电吉他之路。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
-            <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。2025年末报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
+            <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。" />
+            <SplitTextScatter
+              style={{ WebkitTextStroke: "0px " }}
+              text="2025"
+            />
+            <SplitTextScatter text="年末报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             <SplitTextScatter text="无数次幻想自己也可以那么耀眼，虽然现在还差的远。" />

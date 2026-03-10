@@ -4,9 +4,10 @@ import React, { useRef } from "react";
 interface Props {
   text: string;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
-export default function SplitTextMagnetic({ text, onClick }: Props) {
+export default function SplitTextMagnetic({ text, onClick, style }: Props) {
   const refs = useRef<(HTMLSpanElement | null)[]>([]);
 
   const handleMove = (e: React.MouseEvent) => {
@@ -42,7 +43,7 @@ export default function SplitTextMagnetic({ text, onClick }: Props) {
   };
 
   return (
-    <span onMouseMove={handleMove} onMouseLeave={handleLeave}>
+    <span onMouseMove={handleMove} onMouseLeave={handleLeave} style={style}>
       {text.split("").map((char, i) => (
         <motion.span
           key={i}
