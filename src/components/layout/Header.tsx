@@ -27,20 +27,20 @@ const Header = () => {
   };
 
   const buttonSx = {
-    fontSize: "1.5rem",
+    fontSize: { xs: "1rem", md: "1.5rem" },
     color: ballOn ? "#FF7043" : "#8CF7D4",
     transition: "color 0.3s ease",
   };
 
   const toolbarSx = {
     justifyContent: "space-between",
-    fontSize: "2rem",
+    fontSize: { xs: "1.2rem", md: "2rem" },
   };
 
   const logoImgSx = {
-    height: 40,
+    height: { xs: 28, md: 40 },
     width: "auto",
-    mr: 2,
+    mr: { xs: 1, md: 2 },
     cursor: "pointer",
   };
 
@@ -48,7 +48,7 @@ const Header = () => {
     textDecoration: "none",
     color: theme.palette.text.primary,
     fontWeight: theme.typography.fontWeightBold,
-    fontSize: "3rem",
+    fontSize: { xs: "1.8rem", md: "3rem" },
     cursor: "pointer",
   };
 

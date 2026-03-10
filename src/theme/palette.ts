@@ -4,13 +4,12 @@
 // 暗色主题调色板
 export const darkPalette = {
   // 主色、按钮填充色
-  primary: { main: "#8CF7D4", contrastText: "#000" },
-
+  primary: { main: "#8CF7D4", contrastText: "#000",},
   // 页面背景色
   background: { default: "#0e1111", paper: "#1f2424ff" },
 
   // 正文文字、次要文字、禁用状态文字
-  text: { primary: "#ffffff", secondary: "#bbbbbb", disabled: "#777777" },
+  text: { primary: "#ffffff", secondary: "#bbbbbb", disabled: "#777777", },
 
   // 分隔线、边框
   divider: "#2a2e2e",

@@ -15,6 +15,7 @@ import { useLocation } from "react-router-dom";
 import SplitTextScatter from "../../components/animations/SplitTextScatter";
 import ScrambleTextHover from "../../components/animations/ScrambleTextHover";
 import guitar from "../../../public/images/guitar.png";
+import { useTheme } from "@mui/material/styles";
 
 const About = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const About = () => {
     "还在和手指较劲的电吉他玩家",
   ];
   const [useYoutube, setUseYoutube] = useState(true);
+  const theme = useTheme();
   const testYoutube = () => {
     return new Promise<boolean>((resolve) => {
       const img = new Image();
@@ -38,6 +40,7 @@ const About = () => {
       img.onerror = () => resolve(false);
     });
   };
+
   useEffect(() => {
     const check = async () => {
       const ok = await testYoutube();
@@ -77,7 +80,7 @@ const About = () => {
     <Box
       sx={{
         backgroundImage: `url(${guitar})`,
-        backgroundPosition: "right -670px top 3780px",
+        backgroundPosition: "right -670px top 3680px",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -89,11 +92,11 @@ const About = () => {
       >
         <Card
           raised
-          style={{
-            width: "830px",
+          sx={{
+            width: { xs: "92vw", sm: "600px", md: "830px" },
             zIndex: 100,
-            margin: "30px auto  300px auto",
-            padding: 16,
+            margin: { xs: "16px auto 80px auto", md: "30px auto 300px auto" },
+            padding: { xs: 1, md: 2 },
             overflow: "visible",
           }}
         >
@@ -106,12 +109,12 @@ const About = () => {
             </Typography>
 
             <Typewriter
-              sx={{ ml: "90px" }}
+              sx={{ ml: { xs: "16px", md: "90px" } }}
               text={textList[index]}
-              speed={150} // 每个字符打字时间
-              variance={0.4} // 打字速度浮动
-              backspaceDelay={60} // 删除字符时间
-              pauseDelay={1000} // 打完/删完后停顿时间
+              speed={150}
+              variance={0.4}
+              backspaceDelay={60}
+              pauseDelay={1000}
               cursorBlinkSpeed={0.8}
               Size={"h2"}
               showCursor
@@ -164,7 +167,7 @@ const About = () => {
           m={0}
           sx={{ scrollMarginTop: "150px" }}
         >
-          <Box sx={{ m: 10 }}>
+          <Box sx={{ m: { xs: 2, md: 10 } }}>
             <Typography variant="h4" gutterBottom>
               一直想自己做一个网站,拖了很久很久,不过还好,总算在7月开始动手了。
             </Typography>
@@ -209,12 +212,16 @@ const About = () => {
               desc="语法简洁的编程语言"
               hoverDesc="用过 Python 开发自动化测试系统，目前掌握还不多，适合做小工具，正在继续学习"
             />
-            <GitHubCalendar
-              username="xiliu2529"
-              blockSize={22}
-              blockMargin={6}
-              fontSize={14}
-            />
+            <Box
+              sx={{ width: "100%", overflowX: "auto", px: { xs: 1, md: 0 } }}
+            >
+              <GitHubCalendar
+                username="xiliu2529"
+                blockSize={22}
+                blockMargin={6}
+                fontSize={14}
+              />
+            </Box>
             ;
           </Grid>
         </Box>
@@ -233,10 +240,13 @@ const About = () => {
         <Box
           justifyContent="center"
           id="section-developer"
-          m={10}
-          sx={{ scrollMarginTop: "200px" }}
+          sx={{
+            mx: { xs: 2, md: 10 },
+            my: { xs: 4, md: 10 },
+            scrollMarginTop: "200px",
+          }}
         >
-          <Box sx={{ m: 10 }}>
+          <Box sx={{ m: { xs: 2, md: 10 } }}>
             <Typography variant="h4" gutterBottom>
               作为一个游戏玩家，我喜欢探索各种类型的游戏，从角色扮演到策略游戏，每个游戏都有其独特的魅力。
             </Typography>
@@ -260,9 +270,12 @@ const About = () => {
       >
         <Box
           id="section-communist"
-          m={10}
+          sx={{
+            mx: { xs: 2, md: 10 },
+            mt: { xs: 6, md: 30 },
+            scrollMarginTop: "150px",
+          }}
           justifyContent="center"
-          sx={{ mt: 30, scrollMarginTop: "150px" }}
         >
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             劳动者是世界的真正创造者，
@@ -298,8 +311,10 @@ const About = () => {
                 allowFullScreen
                 style={{
                   borderRadius: 8,
-                  height: "600px",
-                  width: "80%",
+                  aspectRatio: "16/9",
+                  height: "auto",
+                  width: "100%",
+                  maxWidth: "900px",
                 }}
               ></iframe>
             ) : (
@@ -307,8 +322,10 @@ const About = () => {
                 src="//player.bilibili.com/player.html?isOutside=true&bvid=BV1Vy4y1B7V2&autoplay=0"
                 allowFullScreen
                 style={{
-                  height: "600px",
-                  width: "80%",
+                  aspectRatio: "16/9",
+                  height: "auto",
+                  width: "100%",
+                  maxWidth: "900px",
                   borderRadius: 8,
                   boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
                 }}
@@ -334,15 +351,24 @@ const About = () => {
       >
         <Box
           id="section-guitarist"
-          m={10}
-          justifyContent="center"
           sx={{
-            mt: 30,
+            mx: { xs: 2, md: 10 },
+            mt: { xs: 6, md: 30 },
+            mb: { xs: 4, md: 10 },
             scrollMarginTop: "150px",
-            height: "700px",
+            minHeight: { xs: "auto", md: "700px" },
+            WebkitTextStroke: "0.5px ",
+            WebkitTextStrokeColor: theme.palette.background.paper,
           }}
+          justifyContent="center"
         >
-          <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              lineHeight: 1.8,
+              mb: 2,
+            }}
+          >
             <SplitTextScatter text="偶然在B站刷到一个电吉他视频・" />
 
             <Typography
