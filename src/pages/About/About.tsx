@@ -14,6 +14,7 @@ import Carousel3D from "../../components/animations/Carousel3D";
 import { useLocation } from "react-router-dom";
 import SplitTextScatter from "../../components/animations/SplitTextScatter";
 import ScrambleTextHover from "../../components/animations/ScrambleTextHover";
+import guitar from "../../../public/images/guitar.png";
 
 const About = () => {
   const location = useLocation();
@@ -73,7 +74,13 @@ const About = () => {
   ];
 
   return (
-    <Box>
+    <Box
+      sx={{
+        backgroundImage: `url(${guitar})`,
+        backgroundPosition: "right -670px top 3780px",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 40, scale: 0.85 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -329,7 +336,11 @@ const About = () => {
           id="section-guitarist"
           m={10}
           justifyContent="center"
-          sx={{ mt: 30, scrollMarginTop: "150px" }}
+          sx={{
+            mt: 30,
+            scrollMarginTop: "150px",
+            height: "700px",
+          }}
         >
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             <SplitTextScatter text="偶然在B站刷到一个电吉他视频・" />
