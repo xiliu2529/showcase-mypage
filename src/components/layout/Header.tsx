@@ -17,6 +17,16 @@ const Header = () => {
     height: "70px",
   };
 
+  const scrollToTop = () => {
+    const el = document.getElementById("main-scroll");
+    if (el) {
+      el.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const buttonSx = {
     fontSize: "1.5rem",
     color: ballOn ? "#FF7043" : "#8CF7D4",
@@ -32,6 +42,7 @@ const Header = () => {
     height: 40,
     width: "auto",
     mr: 2,
+    cursor: "pointer",
   };
 
   const logoTextSx = {
@@ -39,6 +50,7 @@ const Header = () => {
     color: theme.palette.text.primary,
     fontWeight: theme.typography.fontWeightBold,
     fontSize: "3rem",
+    cursor: "pointer",
   };
 
   return (
@@ -46,8 +58,14 @@ const Header = () => {
       <Toolbar sx={toolbarSx}>
         {/* Logo 区域 */}
         <Box display="flex" alignItems="center">
-          <Box component="img" src={trinity} alt="Logo" sx={logoImgSx} />
-          <Typography variant="h6" sx={logoTextSx}>
+          <Box
+            component="img"
+            src={trinity}
+            alt="Logo"
+            sx={logoImgSx}
+            onClick={scrollToTop}
+          />
+          <Typography variant="h6" sx={logoTextSx} onClick={scrollToTop}>
             Xiliu
           </Typography>
         </Box>

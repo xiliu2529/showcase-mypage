@@ -77,6 +77,7 @@ const App: React.FC = () => (
       >
         <Header />
         <Container
+          id="main-scroll"
           maxWidth={false}
           sx={{
             width: "100%",
