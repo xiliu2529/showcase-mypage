@@ -47,12 +47,7 @@ const Header = () => {
         {/* Logo 区域 */}
         <Box display="flex" alignItems="center">
           <Box component="img" src={trinity} alt="Logo" sx={logoImgSx} />
-          <Typography
-            variant="h6"
-            component={RouterLink}
-            to="/"
-            sx={logoTextSx}
-          >
+          <Typography variant="h6" sx={logoTextSx}>
             Xiliu
           </Typography>
         </Box>

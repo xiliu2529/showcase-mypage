@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import Carousel3D from "../../components/animations/Carousel3D";
 import { useLocation } from "react-router-dom";
 import SplitTextScatter from "../../components/animations/SplitTextScatter";
+import ScrambleTextHover from "../../components/animations/ScrambleTextHover";
 
 const About = () => {
   const location = useLocation();
@@ -357,8 +358,15 @@ const About = () => {
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。过年的时候报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
           </Typography>
-          <Typography variant="h3" sx={{ lineHeight: 1.8, mb: 2 }}>
-            <SplitTextScatter text="无数次幻想自己也可以那么耀眼，虽然现在还差的远，但至少，我已经能看见那个未来的自己了。" />
+          <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+            <SplitTextScatter text="无数次幻想自己也可以那么耀眼，虽然现在还差的远。" />
+          </Typography>
+          <Typography
+            variant="h2"
+            textAlign="center"
+            sx={{ lineHeight: 1.8, mb: 2 }}
+          >
+            <ScrambleTextHover text="但至少，我已经能看见那个未来的自己了。" />
           </Typography>
         </Box>
       </motion.div>
