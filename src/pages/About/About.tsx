@@ -12,6 +12,7 @@ import pythonIcon from "../../assets/icon/python.png";
 import { motion } from "framer-motion";
 import Carousel3D from "../../components/animations/Carousel3D";
 import { useLocation } from "react-router-dom";
+import SplitTextScatter from "../../components/animations/SplitTextScatter";
 
 const About = () => {
   const location = useLocation();
@@ -324,24 +325,19 @@ const About = () => {
         viewport={{ once: false, amount: 0.2 }}
       >
         <Box
-          id="section-communist"
+          id="section-guitarist"
           m={10}
           justifyContent="center"
           sx={{ mt: 30, scrollMarginTop: "150px" }}
         >
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
-            偶然在B站刷到一个电吉他视频・
+            <SplitTextScatter text="偶然在B站刷到一个电吉他视频・" />
+
             <Typography
               component="span"
               sx={{
                 fontSize: "40px",
                 color: "primary.main",
-                cursor: "pointer",
-                "&:hover": {
-                  transform: "scale(1.5)",
-                  color: "primary.main",
-                  cursor: "pointer",
-                },
               }}
               onClick={() =>
                 window.open(
@@ -350,21 +346,19 @@ const About = () => {
                 )
               }
             >
-              《钢铁洪流进行曲》
+              <SplitTextScatter text="《钢铁洪流进行曲》" />
             </Typography>
-            电吉他版 ，当时就觉得非常带感。
-            起初没太在意，后来发现自己被吸引了又去历史记录找来看，甚至想学会电吉他弹这个曲子。
+
+            <SplitTextScatter text="电吉他版，当时就觉得非常带感。起初没太在意，后来发现自己被吸引了又去历史记录找来看，甚至想学会电吉他弹这个曲子。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
-            经过一周的考虑买了一把电吉他，开始了我的电吉他之路。
-            <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
-              {" "}
-            </Typography>
-            本来想纯自学，但学了一个月发现自己没动力，进步很慢，不知道自己错在哪里。
-            过年的时候报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步很大。
+            <SplitTextScatter text="经过一周的考虑买了一把电吉他，开始了我的电吉他之路。" />
+          </Typography>
+          <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
+            <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。过年的时候报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
           </Typography>
           <Typography variant="h3" sx={{ lineHeight: 1.8, mb: 2 }}>
-            无数次幻想自己也可以那么耀眼，虽然现在还差的远，但是能看见那个以后的自己。
+            <SplitTextScatter text="无数次幻想自己也可以那么耀眼，虽然现在还差的远，但至少，我已经能看见那个未来的自己了。" />
           </Typography>
         </Box>
       </motion.div>
