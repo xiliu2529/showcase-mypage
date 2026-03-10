@@ -26,7 +26,7 @@ const About = () => {
     "Xiliubat",
     "离不开 AI 的程序员",
     "正在学习的半成品全栈开发新手",
-    "手指总掉队的电吉他新手",
+    "还在和手指较劲的电吉他玩家",
   ];
   const [useYoutube, setUseYoutube] = useState(true);
   const testYoutube = () => {
@@ -350,13 +350,13 @@ const About = () => {
               <SplitTextScatter text="《钢铁洪流进行曲》" />
             </Typography>
 
-            <SplitTextScatter text="电吉他版，当时就觉得非常带感。起初没太在意，后来发现自己被吸引了又去历史记录找来看，甚至想学会电吉他弹这个曲子。" />
+            <SplitTextScatter text="电吉他版，当时就觉得非常带感。起初没太在意，后来发现自己被吸引了，又去历史记录找来看，甚至想学会电吉他弹这个曲子。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             <SplitTextScatter text="经过一周的考虑买了一把电吉他，开始了我的电吉他之路。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
-            <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。过年的时候报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
+            <SplitTextScatter text="本来打算自学，但学了一个月发现自己没什么动力，进步也很慢。2025年末报了网课，跟着老师学了一段时间，得到了鼓励，感觉进步了很多。" />
           </Typography>
           <Typography variant="h4" sx={{ lineHeight: 1.8, mb: 2 }}>
             <SplitTextScatter text="无数次幻想自己也可以那么耀眼，虽然现在还差的远。" />

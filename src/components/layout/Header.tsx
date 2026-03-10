@@ -1,4 +1,3 @@
-import { Link as RouterLink } from "react-router-dom";
 import { AppBar, Toolbar, Typography, Box, Button } from "@mui/material";
 import trinity from "../../assets/trinity.png";
 import { useAppContext } from "../../context/useAppContext";
