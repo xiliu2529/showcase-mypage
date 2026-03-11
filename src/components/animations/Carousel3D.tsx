@@ -4,9 +4,9 @@ import gsap from "gsap";
 import { Observer } from "gsap/all";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { useTheme } from "@mui/material/styles";
 
 gsap.registerPlugin(Observer);
-
 const Carousel3D: React.FC<{
   imagesdata: { label: string; images: string[] }[];
 }> = ({ imagesdata }) => {
@@ -16,9 +16,9 @@ const Carousel3D: React.FC<{
   const imageSize = 450;
   const radius = imageSize * 1.4;
   const rotationSpeed = useRef(0.0003);
-
   const [selectedIndex, setselectedIndex] = useState<number | null>(null);
   const [openImageIndex, setOpenImageIndex] = useState(0);
+  const theme = useTheme();
 
   useEffect(() => {
     const carousel = carouselRef.current;
@@ -159,7 +159,7 @@ const Carousel3D: React.FC<{
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               transformOrigin: "50% 50%",
-              backgroundColor: "#111",
+              backgroundColor: theme.palette.text.primary,
               borderRadius: "12px",
               boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
               transition: "transform 0.3s",
